@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="blink">Blinking Text</p>
+    <button id="stopBtn">Stop Blinking</button>
+    <script>
+        const blinkEl = document.getElementById("blink");
+        let isRed = false;
+        const blinkId = setInterval(() => {
+            if(blinkEl.style.color = "black") ? "black" : "red";
+            isRed = !isRed;} else{
+
+            }, 500);
+        document.getElementById("stopBtn").onclick = () => {
+            clearInterval(blinkId);
+            console.log("Blinking stopped.");
+        };
+    </script>
+</body>
+
+</html>

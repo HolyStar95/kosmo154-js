@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 10: 실시간 디지털 시계</title>
+    <style>
+        #clock {
+            font-size: 24px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let count = 15;
+        const gameCountdown = setInterval(() => {
+            if (count > 0) {
+                console.log(count);
+                count--;
+            } else {
+                console.log("times-up!");
+                clearInterval(gameCountdown);
+            }
+            
+        }, 1000);
+    </script>
+</body>
+>
+
+
+</html>

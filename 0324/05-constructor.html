@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Member1{
+            // 객체를 처음 선언 시 초기화하는 역할을 수행
+            constructor(name){
+                this.name = name;
+            }
+            getName(){
+                return this.name;
+            }
+        }
+
+        const obj1 = new Member1("abc");
+        console.log(obj1.getName()); // abc
+        console.dir(obj1); // { name : "abc" }
+    </script>
+</body>
+</html>
