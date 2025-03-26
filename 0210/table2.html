@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- table>((tr>td{내용$}*3)(tr>td{내용$@4}*3)) -->
+     <!-- 참고1 " colspan은 좌에서 우로 확장" -->
+      <!-- 참고2 : : rowspan은 위에서 아래로 확장 -->
+<!-- 참고3 : rowspan은 위에서 아래로 확장 시 tr개수를 초과하는 확장은 불가능 -->
+    <table border="1">
+        <tr>
+            <td colspan="3">내용1</td>
+            <td rowspan="2">내용2</td>
+            <td rowspan="2">내용3</td>
+        </tr>
+        <tr>
+            <td>내용4</td>
+            <td>내용5</td>
+            <td>내용6</td>
+        </tr>
+    </table>
+    <br>
+    <table border="1">
+        <tr>
+            <td>내용1</td>
+            <td>내용2</td>
+            <td>내용3</td>
+        </tr>
+        <tr>
+            <td>내용1</td>
+            <td>내용2</td>
+            <td>내용3</td>
+        </tr>
+    table>((tr>td{}*3)(tr>td{}*6))
+        </body>
+</html>
