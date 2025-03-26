@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // shadowDOM : 본문의 globalDOM과 분리된 영역을 설정
+        // -> attachShadow를 통해 shadowRoot를 생성
+        document.querySelector(".sample").attachShadow({mode : 'open'});
+        let h1 = document.createElement("h1");
+        h1.textContent = "hello";
+        document.querySelector(".sample").shadowRoot.innerHTML =
+        `
+        <style>
+            h1 { color : red;}
+        </style>
+        '<p>오늘도 좋은 하루</p>'
+        `;
+        document.querySelector(".sample").shadowRoot.append(h1);
+    </script>
+</body>
+</html>
