@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Description Toggle</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <img id="profilePic" src="./cat.jpeg" alt="프로필">
+    <div id="description" style="display:none;">이미지에 대한 상세 설명</div>
+    <script>
+        $(document).ready(function () {
+            $("#profilePic").click(function () {
+                $("#description").fadeToggle(300, function () {
+                    console.log("설명 영역 토글됨");
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

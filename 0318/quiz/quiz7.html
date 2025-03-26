@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            background-color: rgb(182, 125, 41);
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">hi</div>
+    <button id="btn1">버튼</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const myDiv = document.getElementById("myDiv");
+            myDiv.classList.toggle("active");
+        })
+    </script>
+</body>
+</html>

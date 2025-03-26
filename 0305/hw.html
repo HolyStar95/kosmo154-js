@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" name="num1" id="num1">
+    <input type="number" name="num2" id="num2">
+    <button id="btn">연산</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            var num11 = document.getElementById("num1").value;
+            var num22 = document.getElementById("num2").value;
+            var input = (num11 == num22) ? "같다" : (num11 > num22) ? "크다" : "작다";
+            alert(input);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="num1" id="num1">
+    <button id="btn">출력</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            var num = parseInt(document.getElementById("num1").value);
+            var result = "";
+
+            // if(num > 10){
+            //     result = "입력값은 10보다 큽니다";
+            // }
+
+            // if(num <= 10){
+            //     result = "입력값은 10보다 작거나 같습니다.";
+            // }
+            if(num > 10){
+                result = "입력값은 10보다 큽니다";
+            } else{
+                result = "입력값은 10보다 작거나 같습니다.";
+            }
+
+            alert(result);
+        })
+    </script>
+</body>
+</html>

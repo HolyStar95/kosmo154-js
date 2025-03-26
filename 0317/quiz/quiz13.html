@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="gallery">
+        <img src="" alt=" 없음1">
+        <img src="" alt=" 없음2">
+        <img src="" alt=" 없음3">
+        <img src="" alt=" 없음1">
+    </div>
+    <button id="btn1">버튼</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const gallery = document.getElementById("gallery");
+            const four = gallery.children[3];
+            four.setAttribute("alt", "Gallery Image");
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 12: 상태 토글 (dataset)</title>
+    <style>
+        #toggleDiv {
+            padding: 15px;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        /* 상태에 따른 배경색 스타일 */
+        .on {
+            background-color: lightgreen;
+        }
+
+        .off {
+            background-color: lightcoral;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- dataset을 활용한 data-state -->
+    <div id="toggleDiv" data-state="off" class="off">상태: off</div>
+    <button id="toggleButton">Toggle 상태</button>
+    <script>
+        const toggleDiv = document.getElementById('toggleDiv');
+        const toggleButton = document.getElementById('toggleButton');
+        toggleButton.addEventListener('click', function () {
+            // dataset을 사용하여 현재 상태 읽기
+            const currentState = toggleDiv.dataset.state;
+            // 토글: 'off'이면 'on', 'on'이면 'off'
+            const newState = (currentState === 'off') ? 'on' : 'off';
+
+            // dataset과 텍스트 업데이트
+            toggleDiv.dataset.state = newState;
+            toggleDiv.textContent = "상태: " + newState;
+            // CSS 클래스 업데이트 (배경색 전환)
+            toggleDiv.classList.remove('on', 'off');
+            toggleDiv.classList.add(newState);
+        });
+    </script>
+</body>
+
+</html>

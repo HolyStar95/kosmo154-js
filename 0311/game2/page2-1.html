@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>웹 미궁게임</h1>
+        <p>ㄴㅇㄴㅇㅇㅇㅇㅇㅇㅇㅇㅇ!</p>
+        <form  method="get" id="quizForm">
+            <input type="text" name="answer" placeholder="정답 입력">
+            <button type="submit">제출</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+<script>
+    const form = document.getElementById("quizForm");
+    form.addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const answer = form.elements["answer"].value.trim().toLowerCase();
+        if(answer !== "!"){
+            alert("정답이 아닙니다");
+            return;
+        }
+        form.action = "page2-2.html";
+        form.submit();
+    })
+</script>
+</body>
+
+</html>

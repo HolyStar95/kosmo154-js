@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const arr1 = [""];
+        const arr2 = [1,
+            'abc',
+            2,
+            { a: 1, b: '반갑습니다.' }];
+        console.log(arr2[3]);
+        // 배열 통합 호출
+        console.dir(arr2);
+        // 배열 단위 호출 확장 : 배열과 객체가 섞여 있을 경우 접근
+        console.log(arr2[3].b); // 반갑습니다.
+    </script>
+</body>
+
+</html>

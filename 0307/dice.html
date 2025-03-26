@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위 게임</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .dice {
+            font-size: 80px;
+            margin: 20px;
+            transition: transform 0.3s;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎲 주사위 게임 🎲</h1>
+    <div class="dice" id="dice">🎲</div>
+    <button onclick="rollDice()">주사위 굴리기</button>
+
+    <script>
+        function rollDice() {
+            const dice = document.getElementById("dice");
+            const randomNum = Math.floor(Math.random() * 6) + 1;
+            const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+            
+            dice.style.transform = "rotate(360deg)";
+            setTimeout(() => {
+                dice.innerText = diceFaces[randomNum - 1];
+                dice.style.transform = "rotate(0deg)";
+            }, 300);
+            console.log(randomNum);
+        }
+    </script>
+</body>
+</html>

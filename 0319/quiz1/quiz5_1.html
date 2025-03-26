@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 5: 마우스 버튼 번호 확인하기 - 정답 소스</title>
+</head>
+
+<body>
+    <button class="btn">버튼 1</button>
+    <button class="btn">버튼 2</button>
+    <button class="btn">버튼 3</button>
+    <script>
+        // 클래스가 btn 인 모든 버튼 선택
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(function (btn) {
+            btn.addEventListener('click', function (event) {
+                console.log("클릭된 버튼 번호: " + event.button);
+            });
+        });
+    </script>
+</body>
+
+</html>

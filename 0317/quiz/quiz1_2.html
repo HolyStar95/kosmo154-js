@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 1: appendChild</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        // list 요소 선택
+        const list = document.getElementById("list");
+
+        // 새로운 li 요소 생성
+        const newListItem = document.createElement("li");
+
+        // 텍스트 노드 추가 (간단하게 textContent 사용)
+        newListItem.textContent = "Item 4";
+
+        // li 요소를 list의 맨 뒤에 추가
+        list.appendChild(newListItem);
+    </script>
+</body>
+
+</html>

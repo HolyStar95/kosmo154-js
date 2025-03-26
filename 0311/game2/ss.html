@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 미궁 게임</title>
+    <style>
+        /* 전체적인 스타일 설정 */
+        body { 
+            text-align: center; 
+            font-family: Arial, sans-serif; 
+            margin-top: 50px; 
+        }
+
+        /* 숨겨진 요소를 감추기 위한 스타일 */
+        .hidden { 
+            display: none; 
+        }
+
+        /* 입력창 스타일 */
+        input { 
+            padding: 5px; 
+            font-size: 16px; 
+        }
+
+        /* 버튼 스타일 */
+        button { 
+            padding: 10px 15px; 
+            font-size: 16px; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🔑 웹 미궁 게임 🔑</h1>
+
+    <!-- 첫 번째 문제 -->
+    <div id="stage1">
+        <p>문제 1: "사과"를 영어로 하면?</p>
+        <input type="text" id="answer1">
+        <button onclick="checkAnswer(1)">제출</button>
+    </div>
+
+    <!-- 두 번째 문제 (초기에는 숨겨져 있음) -->
+    <div id="stage2" class="hidden">
+        <p>문제 2: 3 + 5 = ?</p>
+        <input type="text" id="answer2">
+        <button onclick="checkAnswer(2)">제출</button>
+    </div>
+
+    <!-- 세 번째 문제 (초기에는 숨겨져 있음) -->
+    <div id="stage3" class="hidden">
+        <p>문제 3: 대한민국의 수도는?</p>
+        <input type="text" id="answer3">
+        <button onclick="checkAnswer(3)">제출</button>
+    </div>
+
+    <!-- 정답을 모두 맞히면 표시되는 축하 메시지 (초기에는 숨김) -->
+    <div id="win" class="hidden">
+        <h2>🎉 축하합니다! 미궁을 탈출했습니다! 🎉</h2>
+    </div>
+
+    <script>
+        function checkAnswer(stage) {
+            // 사용자가 입력한 값을 가져오고, 앞뒤 공백을 제거한 후 소문자로 변환
+            let userAnswer = document.getElementById("answer" + stage).value.trim().toLowerCase();
+
+            // 문제별 정답을 저장한 객체
+            let correctAnswers = {
+                1: "apple", // 문제 1 정답
+                2: "8",     // 문제 2 정답
+                3: "서울"   // 문제 3 정답
+            };
+
+            // 사용자의 답이 정답과 일치하는지 확인
+            if (userAnswer === correctAnswers[stage]) {
+                // 현재 문제 숨기기
+                document.getElementById("stage" + stage).classList.add("hidden");
+
+                // 다음 문제가 있다면 표시, 마지막 문제면 축하 메시지 출력
+                if (stage < 3) {
+                    document.getElementById("stage" + (stage + 1)).classList.remove("hidden");
+                } else {
+                    document.getElementById("win").classList.remove("hidden");
+                }
+            } else {
+                // 오답일 경우 알림창 표시
+                alert("틀렸습니다! 다시 시도해보세요.");
+            }
+        }
+    </script>
+
+</body>
+</html>

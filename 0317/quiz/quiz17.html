@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="content">Content Block</div>
+    <button id="btn1">복제</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const main = document.getElementById("content");
+            const clone = main.cloneNode(true);
+
+            main.after(clone);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.7.1.min.js"></script>
+    <style>
+        #desc{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="./cat.jpeg"  alt="프로필" id="profile">
+    <div id="desc">이미지에 대한 상세 설명</div>
+
+    <script>
+        $(document).ready(function(){
+            $("#profile").click(function(){
+                $("#desc").toggle();
+            })
+        })
+    </script>
+</body>
+</html>

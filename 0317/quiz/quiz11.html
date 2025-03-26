@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <p>11</p>
+        <p>22</p>
+    </div>
+    <button id="btn1">버튼</button>
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const wrapper = document.getElementById("wrapper");
+            const header = document.createElement("p");
+            header.textContent = "Header";
+
+            wrapper.prepend(header);
+        })
+    </script>
+</body>
+</html>

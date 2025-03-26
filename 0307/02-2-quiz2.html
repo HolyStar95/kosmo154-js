@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>점수 등급 평가</h1>
+    <input type="number" name="score" id="score" placeholder="점수 입력" min="0" max="100">
+    <button id="btn">등급 확인</button>
+    <div id="div1"></div>
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            var val1 = parseInt(document.getElementById("score").value);
+            var result = (val1 >= 90) ? "A" :
+                         (val1 >= 80) ? "B" :
+                         (val1 >= 70) ? "C" :
+                         (val1 >= 60) ? "D" : "F";
+
+        document.getElementById("div1").innerText = `당신의 점수는 ${val1}이며, 등급은${result}입니다.`
+        });
+    </script>
+</body>
+
+</html>

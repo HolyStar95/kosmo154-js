@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 2: 수정키 감지하기 - 정답 소스</title>
+</head>
+
+<body>
+    <button id="modifierButton">수정키와 함께 클릭</button>
+    <script>
+        const btn = document.getElementById('modifierButton');
+        btn.addEventListener('click', function (event) {
+            // 각 수정키의 활성 여부를 확인하여 콘솔에 출력
+            if (event.shiftKey) {
+                console.log("Shift 키 눌림");
+            }
+            if (event.ctrlKey) {
+                console.log("Ctrl 키 눌림");
+            }
+            if (event.altKey) {
+                console.log("Alt 키 눌림");
+            }
+            if (event.metaKey) {
+                console.log("Meta 키(Windows/Command) 눌림");
+            }
+            // 어떤 수정키도 누르지 않은 경우
+            if (!event.shiftKey && !event.ctrlKey && !event.altKey && !event.metaKey) {
+                console.log("수정키 없이 클릭");
+            }
+        });
+    </script>
+</body>
+
+</html>

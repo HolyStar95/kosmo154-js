@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <p>안녕하세요</p>
+        <h1>반갑습니다</h1>
+        <h3>이것은 풀스택 클래스입니다.</h3>
+        <p>추가글</p>
+    </div>
+
+    <script>
+        // 1
+        // const objs = document.getElementById("div1").children;
+        // // console.dir(objs);
+
+        // for(const obj of objs){
+        //     console.dir(obj);
+        // }
+
+
+        // 2
+        const objs2 = document.querySelectorAll("p");
+        console.dir(objs2);
+
+        objs2.forEach(function(elem, index){
+            console.dir(elem);
+        });
+        
+    </script>
+</body>
+</html>

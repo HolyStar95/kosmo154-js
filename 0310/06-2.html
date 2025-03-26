@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 게임</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        button { font-size: 20px; margin: 10px; padding: 10px; cursor: pointer; }
+        #result { font-size: 24px; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>가위바위보 게임</h1>
+    <p>가위, 바위, 보 중 하나를 선택하세요!</p>
+    <button onclick="play('가위')">✌️ 가위</button>
+    <button onclick="play('바위')">✊ 바위</button>
+    <button onclick="play('보')">🖐 보</button>
+    <p id="result"></p>
+
+    <script>
+        function play(user) {
+            const choices = ["가위", "바위", "보"];
+            const computer = choices[Math.floor(Math.random() * 3)];
+            const result = 
+                user === computer ? "무승부! 😐" : 
+                (user === "가위" && computer === "보") || 
+                (user === "바위" && computer === "가위") || 
+                (user === "보" && computer === "바위") ? "승리! 🎉" : "패배! 😭";
+            
+            document.getElementById("result").innerText = `컴퓨터: ${computer}\n${result}`;
+        }
+    </script>
+</body>
+</html>

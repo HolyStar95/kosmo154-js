@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 13: 데이터 속성 기반 필터링 (dataset)</title>
+    <style>
+        .item {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #333;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* 선택된 항목에 강조 효과 (확장 아이디어) */
+        .highlight {
+            border-color: blue;
+            background-color: #e0f7ff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>아이템 필터링</h1>
+    <label for="categorySelect">카테고리 선택: </label>
+    <select id="categorySelect">
+        <option value="all">모두 보기</option>
+        <option value="fruit">과일</option>
+        <option value="vegetable">야채</option>
+    </select>
+
+    <div class="item" data-category="fruit">Apple</div>
+    <div class="item" data-category="vegetable">Carrot</div>
+    <div class="item" data-category="fruit">Banana</div>
+    <div class="item" data-category="vegetable">Lettuce</div>
+    <script>
+        const categorySelect = document.getElementById('categorySelect');
+        const items = document.querySelectorAll('.item');
+        categorySelect.addEventListener('change', function () {
+            const selectedCategory = this.value;
+            items.forEach(function (item) {
+                const itemCategory = item.dataset.category;
+                // 'all' 선택 시 모두 보이고, 선택된 카테고리와 일치할 때 보임
+                if (selectedCategory === "all" || itemCategory === selectedCategory) {
+                    item.style.display = "block";
+                    item.classList.add('highlight');
+                } else {
+                    item.style.display = "none";
+                    item.classList.remove('highlight');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

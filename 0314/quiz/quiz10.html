@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 10: DOM 속성과 클래스 조작</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        #warning {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        input {
+            padding: 6px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="nameInput" placeholder="이름을 입력하세요">
+    <button id="submitBtn">제출</button>
+    <p id="warning" class="hidden">입력 값이 비어 있습니다!</p>
+    <script>
+        const nameInput = document.getElementById('nameInput');
+        const warning = document.getElementById('warning');
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.addEventListener('click', function () {
+            // 입력 값이 비어있는지 확인 (공백 제거)
+            if (nameInput.value.trim() === "") {
+                // 경고 메시지를 보이게 하고, aria-invalid 속성 추가
+                warning.classList.remove('hidden');
+                nameInput.setAttribute('aria-invalid', 'true');
+                console.log("입력 값이 없습니다.");
+            } else {
+                // 경고 메시지 숨기고, aria-invalid 속성 제거
+                warning.classList.add('hidden');
+                nameInput.removeAttribute('aria-invalid');
+                console.log("입력 값이 확인되었습니다: " + nameInput.value);
+            }
+        });
+    </script>
+</body>
+
+</html>

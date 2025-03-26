@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 7: 특정 클래스 토글하기</title>
+    <style>
+        /* active 클래스에 대한 예시 스타일 */
+        .active {
+            background-color: #cef;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv" style="border:1px solid #ccc; padding:5px;">내용</div>
+    <button id="toggleClassBtn">클래스 토글</button>
+    <script>
+        var toggleClassBtn = document.getElementById("toggleClassBtn");
+        var myDiv = document.getElementById("myDiv");
+        toggleClassBtn.addEventListener("click", function () {
+            myDiv.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>

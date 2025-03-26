@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box Selection</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+    <script>
+        $(document).ready(function () {
+            $(".box").click(function () {
+                $(this).css("background-color", "yellow")
+                    .html("Box selected");
+                console.log("박스 선택됨:", $(this).text());
+            });
+        });
+    </script>
+</body>
+
+</html>

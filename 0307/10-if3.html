@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="num1" id="num1">
+    <button id="btn">출력</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", function () {
+            var num1 = parseInt(document.getElementById("num1").value);
+            var result;
+
+            if (num1 > 50) {
+                result = "입력값은 50보다 크다.";
+            } else if (num1 > 40) {
+                result = "입력값은 50과 40 사이에 존재";
+            } else if (num1 > 30) {
+                result = "입력값은 30과 40 사이에 존재";
+            } else if (num1 > 20) {
+                result = "입력값은 20과 30 사이에 존재";
+            } else {
+                result = "입력값은 20 이하.";
+            }
+            // if (num1 > 50) {
+            //     result = "입력값은 50보다 크다.";
+            // } else {
+            //     if (num1 > 40 && num1 <= 50) {
+            //         result = "입력값은 50과 40사이에 존재";
+            //     } else {
+            //         if (num1 > 30 && num1 <= 40) {
+            //             result = "입력값은 30과 40사이에 존재";
+            //         } else {
+            //             if (num1 > 20 && num1 <= 30) {
+            //                 result = "입력값은 20과 30사이에 존재";
+            //             } else {
+            //                 result = "입력값은 20 이하.";
+            //             }
+            //         }
+            //     }
+            // }
+            alert(result);
+        });
+    </script>
+</body>
+
+</html>

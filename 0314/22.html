@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언 메뉴 예시</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 기본 스타일링 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* 아코디언 메뉴 컨테이너 */
+        .accordion-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        /* 아코디언 버튼 스타일 */
+        .accordion {
+            background-color: #f1f1f1;
+            color: #444;
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 5px;
+        }
+
+        /* 버튼 호버 효과 */
+        .accordion:hover {
+            background-color: #ddd;
+        }
+
+        /* 패널 내용 기본 숨김 */
+        .panel {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* 패널 내용 안의 텍스트 스타일 */
+        .panel p {
+            padding: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="accordion-container">
+        <button class="accordion">메뉴 1</button>
+        <div class="panel">
+            <p>메뉴 1 내용</p>
+        </div>
+
+        <button class="accordion">메뉴 2</button>
+        <div class="panel">  
+        </div>
+
+        <button class="accordion">메뉴 3</button>
+        <div class="panel">
+            <p>메뉴 3 내용</p>
+        </div>
+    </div>
+
+    <script>
+        // 모든 아코디언 버튼 선택
+        const accordions = document.querySelectorAll('.accordion');
+
+        // 각 버튼에 클릭 이벤트 추가
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function () {
+                // 현재 버튼에 연결된 패널을 찾기
+                const panel = this.nextElementSibling;
+
+                // 패널이 열려있으면 닫기
+                if (panel.style.display === 'block') {
+                    panel.style.display = 'none';
+                } else {
+                    // 다른 패널들을 모두 닫고 현재 패널만 열기
+                    document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
+                    panel.style.display = 'block';
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

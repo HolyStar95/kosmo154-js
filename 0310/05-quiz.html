@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>랜덤 인삿말 출력</h1>
+    <button id="btn">인삿말 출력</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            var random = Math.floor(Math.random()*3)+1;
+            var hi;
+
+            if(random ===1){
+                hi = "안녕하세요";
+            }else if(random ===2){
+                hi = "반갑습니다.";
+            }else {
+                hi = "좋은 하루 되세요";
+            }
+
+            document.getElementById("result").textContent = hi;
+        })
+    </script>
+</body>
+</html>

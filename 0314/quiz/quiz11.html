@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 11: 클릭 카운터 버튼 (dataset)</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 데이터 속성(data-count)을 dataset으로 활용 -->
+    <button id="clickCounter" data-count="0">Click Me!</button>
+    <script>
+        const clickCounter = document.getElementById('clickCounter');
+        clickCounter.addEventListener('click', function () {
+            // dataset을 사용해 data-count 값 읽기 및 정수 변환
+            let currentCount = parseInt(this.dataset.count);
+            // 클릭 시 1 증가
+            currentCount++;
+            // dataset의 data-count와 버튼 텍스트 업데이트
+            this.dataset.count = currentCount;
+            this.textContent = "Click count: " + currentCount;
+        });
+    </script>
+</body>
+
+</html>

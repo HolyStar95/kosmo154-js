@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 14: parentElement와 removeChild</title>
+</head>
+
+<body>
+    <!-- 카드 요소로 감싼 버튼 -->
+    <div id="cardContainer">
+        <div class="card">
+            <p>카드 내용</p>
+            <button id="deleteBtn">Delete Card</button>
+        </div>
+    </div>
+    <script>
+        // deleteBtn 요소 선택
+        const deleteBtn = document.getElementById("deleteBtn");
+
+        // 버튼의 부모(card) 요소 선택
+        const card = deleteBtn.parentElement;
+
+        // card의 부모(cardContainer) 선택 후 removeChild 호출하여 삭제
+        card.parentElement.removeChild(card);
+
+        console.log("카드 요소 삭제됨");
+    </script>
+</body>
+
+</html>

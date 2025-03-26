@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 10: append</title>
+</head>
+
+<body>
+    <div id="footer">
+        <p>Existing Footer Content</p>
+    </div>
+    <script>
+        // footer 요소 선택
+        const footer = document.getElementById("footer");
+
+        // 새로운 span 요소 생성 및 텍스트 노드 추가
+        const newSpan = document.createElement("span");
+        newSpan.textContent = "Footer Info";
+
+        // footer의 맨 뒤에 삽입 (append는 노드 또는 문자열 추가 가능)
+        footer.append(newSpan);
+    </script>
+</body>
+
+</html>

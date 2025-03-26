@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 추첨</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; margin-top: 50px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        .lotto-numbers { margin-top: 20px; font-size: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🎰 로또 번호 추첨기 🎰</h1>
+    <button onclick="generateLotto()">번호 추첨</button>
+    <div class="lotto-numbers" id="numbers"></div>
+
+    <script>
+        function generateLotto() {
+            let numbers = [];
+            while (numbers.length < 6) {
+                let num = Math.floor(Math.random() * 45) + 1;
+                if (!numbers.includes(num)) { // 중복 방지
+                    numbers.push(num);
+                }
+            }
+            numbers.sort((a, b) => a - b); // 번호 정렬
+            document.getElementById("numbers").innerText = `당첨 번호: ${numbers.join(", ")}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 5: cloneNode & appendChild</title>
+</head>
+
+<body>
+    <div id="original">Content</div>
+    <script>
+        // 원본 요소 선택
+        const original = document.getElementById("original");
+
+        // 원본 요소를 자식 노드까지 복제
+        const clone = original.cloneNode(true);
+
+        // 복제본을 원본의 부모 요소에 추가 (맨 뒤에 추가)
+        original.parentElement.appendChild(clone);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img{
+            transition: transform 1s;
+        }
+    </style>
+</head>
+<body>
+    <img src="./sudal.png" width="200px" height="200px" id="img">
+    <button id="btn1">회전</button>
+
+    <script>
+        const img = document.getElementById("img");
+        const btn = document.getElementById("btn1");
+        let angle = 0;
+        
+        btn.addEventListener("click", function(){
+            angle += 45;
+            img.style.transform = "rotate(" + angle + "deg)";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 파라미터 - 함수에 전달할 데이터를 담은 변수
+        //  호출 시 호출과 동시에 담을 데이터를 넣어주면 해당 데이터가
+        // 선언된 변수에 들어가서 사용 할 수 있도록 이동됨.
+        function func1(a){
+            console.log(`전달받은 값은 : ${a}`);
+        }
+
+        func1(5);
+
+        function func2(a,b){
+            console.log(`전달 받은 값은 : ${a} , ${b}` );
+        }
+
+        func2(2,5); // 값은 : 2 , 5
+        func2(4);   // 값은 4, undefined
+        func2(undefined,8); // 값은 undefined,8
+        func2(3,4,5); // 값은 3,4
+
+        function func3(a,...b){
+            console.log(`전달 받은 값은 : ${a} , ${b}` );
+        }
+
+        func3(3,4,5,6); // 값은 3, 4,5,6
+        func3("a", 9) //값은 a, 9
+
+        function func4_1(){
+            function func4_2(){
+                
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 6: 부모 스타일 변화와 offset 값의 관계</title>
+    <style>
+        #parent {
+            position: relative;
+            padding: 30px;
+            border: 5px solid #1e88e5;
+            margin: 20px;
+            background-color: #e3f2fd;
+        }
+
+        #child {
+            position: relative;
+            left: 50px;
+            top: 40px;
+            background-color: #ffcc80;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            font-family: sans-serif;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 6: 부모 스타일 변화와 offset 값의 관계</h1>
+    <div id="parent">
+        부모 요소
+        <div id="child">자식</div>
+    </div>
+    <button id="measureBtn">위치 측정</button>
+    <button id="changeParentBtn">부모 스타일 변경 (패딩 50px)</button>
+    <div id="output"></div>
+    <script>
+        function measureOffsets() {
+            var child = document.getElementById('child');
+            var output = document.getElementById('output');
+            var offsetLeft = child.offsetLeft;
+            var offsetTop = child.offsetTop;
+            output.innerHTML = "자식의 offsetLeft: " + offsetLeft + "px<br>" +
+                "자식의 offsetTop: " + offsetTop + "px<br><br>" +
+                "부모의 padding 및 border 가 offset 값에 영향을 줍니다.";
+            console.log("offsetLeft:", offsetLeft, "offsetTop:", offsetTop);
+        }
+        document.getElementById('measureBtn').addEventListener('click', measureOffsets);
+        document.getElementById('changeParentBtn').addEventListener('click', function () {
+            var parent = document.getElementById('parent');
+            parent.style.padding = "50px";
+            measureOffsets();
+        });
+    </script>
+</body>
+
+</html>

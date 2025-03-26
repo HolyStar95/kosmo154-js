@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // some : 값이 한개라도 들어맞으면 참 or 거짓
+        const per1 = [45 ,80, 32, 62, 75];
+
+        const arr1_1 = per1.some(function(gas){
+            return gas >= 85;
+        });
+        console.log(arr1_1);
+
+        // every : 모든 값이 전부 들어맞으면 참 or 거짓
+        const arr2_1 = per1.every(function(gas){
+            return gas >= 32;
+        });
+        console.log(arr2_1);
+    </script>
+</body>
+</html>

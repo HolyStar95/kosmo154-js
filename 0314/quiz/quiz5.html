@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 5: 클래스 추가하기</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        /* active 클래스가 적용되면 배경색 변화 */
+        .active {
+            background-color: #def;
+        }
+
+        #status {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="status">상태 메시지</div>
+    <button id="addClassButton">active 클래스 추가</button>
+    <script>
+        const statusDiv = document.getElementById('status');
+        const addClassButton = document.getElementById('addClassButton');
+        addClassButton.addEventListener('click', function () {
+            // 이미 active 클래스가 없다면 추가
+            if (!statusDiv.classList.contains('active')) {
+                statusDiv.classList.add('active');
+                console.log("active 클래스가 추가되었습니다.");
+            } else {
+                console.log("이미 active 클래스가 존재합니다.");
+            }
+        });
+    </script>
+</body>
+
+</html>

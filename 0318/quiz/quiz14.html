@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parentDiv">
+        <p>22</p>
+        <h2>33</h2>
+        <h3>11</h3>
+        <h5>22</h5>
+    </div>
+    <button id="btn">버튼</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            const parent = document.getElementById("parentDiv");
+            const check = parent.children.length;
+
+            console.log(check);
+        })
+    </script>
+</body>
+</html>

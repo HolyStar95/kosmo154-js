@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 17: after & cloneNode</title>
+</head>
+
+<body>
+    <div id="content">Content Block</div>
+    <script>
+        // content 요소 선택
+        const content = document.getElementById("content");
+
+        // 요소 완전 복제
+        const cloneContent = content.cloneNode(true);
+
+        // 원본 뒤에 복제본 삽입
+        content.after(cloneContent);
+
+        console.log("복제본이 원본 뒤에 추가되었습니다.");
+    </script>
+</body>
+
+</html>

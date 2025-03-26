@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 10: offset vs. getBoundingClientRect 비교</title>
+    <style>
+        #compare-element {
+            width: 250px;
+            height: 150px;
+            background-color: #d1c4e9;
+            border: 3px solid #7e57c2;
+            margin: 100px auto;
+            position: relative;
+            padding: 10px;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        #button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #output {
+            text-align: center;
+            margin-top: 20px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 10: offset 속성과 getBoundingClientRect() 비교</h1>
+    <div id="compare-element">비교 요소</div>
+    <div id="button-container">
+        <button id="offsetBtn">Offset 값 보기</button>
+        <button id="rectBtn">getBoundingClientRect 값 보기</button>
+    </div>
+    <div id="output"></div>
+    <script>
+        document.getElementById('offsetBtn').addEventListener('click', function () {
+            var elem = document.getElementById('compare-element');
+            var offsetLeft = elem.offsetLeft;
+            var offsetTop = elem.offsetTop;
+            var result = "offsetLeft: " + offsetLeft + "px<br>" +
+                "offsetTop: " + offsetTop + "px<br><br>" +
+                "offset 값은 가장 가까운 positioned ancestor(혹은 문서 본문)을 기준으로 측정됩니다.";
+            document.getElementById('output').innerHTML = result;
+            console.log("offsetLeft:", offsetLeft, "offsetTop:", offsetTop);
+        });
+        document.getElementById('rectBtn').addEventListener('click', function () {
+            var elem = document.getElementById('compare-element');
+            var rect = elem.getBoundingClientRect();
+            var result = "left: " + rect.left.toFixed(2) + "px<br>" +
+                "top: " + rect.top.toFixed(2) + "px<br><br>" +
+                "getBoundingClientRect() 값은 뷰포트 기준으로 측정됩니다.";
+            document.getElementById('output').innerHTML = result;
+            console.log("getBoundingClientRect():", rect);
+        });
+    </script>
+</body>
+
+</html>

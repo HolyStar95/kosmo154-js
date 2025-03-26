@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 7: after & nextElementSibling</title>
+</head>
+
+<body>
+    <div id="content">
+        <p id="text">Text</p>
+    </div>
+    <script>
+        // p 요소 선택
+        const text = document.getElementById("text");
+
+        // 새로운 span 요소 생성 및 텍스트 노드 추가
+        const newSpan = document.createElement("span");
+        newSpan.textContent = "After Text";
+
+        // text 요소 바로 뒤에 삽입
+        text.after(newSpan);
+
+        // 확인: 새 요소의 previousElementSibling는 text여야 함
+        console.log("newSpan.previousElementSibling id:", text.id);
+    </script>
+</body>
+
+</html>

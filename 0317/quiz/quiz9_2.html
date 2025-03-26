@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 9: insertBefore</title>
+</head>
+
+<body>
+    <div id="list">
+        <p id="first">First Paragraph</p>
+    </div>
+    <script>
+        // list와 first 요소 선택
+        const list = document.getElementById("list");
+        const first = document.getElementById("first");
+        // 새로운 p 요소 생성 및 텍스트 노드 추가
+        const newParagraph = document.createElement("p");
+        newParagraph.textContent = "New Paragraph";
+        // first 요소 앞에 새 p 요소 삽입
+        list.insertBefore(newParagraph, first);
+    </script>
+</body>
+
+</html>

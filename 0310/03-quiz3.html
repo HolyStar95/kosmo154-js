@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>무작위 배경색 변경</h1>
+    <button id="btn">배경색 변경</button>
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            var random = Math.floor(Math.random()*3)+1;
+            //색상을 넣는 임시 변수
+            var color;
+
+            if(random === 1){
+                color = "red";
+            }else if(random === 2){
+                color = "green";
+            }else{
+                color = "blue";
+            }
+            
+            //배경색을 바꾸는 로직
+            document.body.style.backgroundColor = color;
+        })
+    </script>
+</body>
+</html>

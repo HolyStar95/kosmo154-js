@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="left">left</div>
+    <div id="right">Right</div>
+    <button id="btn1">삽입</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const left = document.getElementById("left");
+            const right = document.getElementById("right");
+            const centerL = document.createElement("div");
+            const centerR = document.createElement("div");
+
+            centerL.textContent = "Center L";
+            centerR.textContent = "Center R";
+
+            left.after(centerR);
+            right.before(centerL);
+
+
+        })
+    </script>
+</body>
+</html>

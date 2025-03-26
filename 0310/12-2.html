@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="num1" id="num1" placeholder="행 개수">
+    <input type="number" name="num2" id="num2" placeholder="열 개수">
+    <button id="btn">생성</button>
+    <table id="tbl" border="1"></table>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function() {
+            // 행, 열 개수를 가져옴
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+
+            // 입력값이 유효한지 확인
+            if (isNaN(num1) || isNaN(num2) || num1 <= 0 || num2 <= 0) {
+                alert("올바른 숫자를 입력하세요!");
+                return;
+            }
+
+            // 테이블 초기화
+            let tbl = document.getElementById("tbl");
+            tbl.innerHTML = "";
+
+            // 테이블 생성
+            let content = "";
+            for (let i = 0; i < num1; i++) {
+                content += "<tr>";
+                for (let j = 0; j < num2; j++) {
+                    content += `<td>내용${i}-${j}</td>`;
+                }
+                content += "</tr>";
+            }
+
+            // 테이블 업데이트
+            tbl.innerHTML = content;
+        });
+    </script>
+</body>
+</html>

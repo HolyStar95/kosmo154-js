@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제9 - 우클릭 시 p 스타일 변경 및 기본 메뉴 방지하기</title>
+</head>
+
+<body>
+    <p id="contextText">이 문단에서 우클릭 해보세요.</p>
+    <script>
+        const contextText = document.getElementById("contextText");
+        contextText.addEventListener("contextmenu", function (event) {
+            event.preventDefault(); // 기본 우클릭 메뉴 방지
+            contextText.style.color = "purple";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제4 - 버튼으로 텍스트 크기 조절하기</title>
+    <style>
+        #text {
+            font-size: 16px;
+            /* 초기 폰트 사이즈 */
+        }
+    </style>
+</head>
+
+<body>
+    <p id="text">이 텍스트의 크기를 조절하세요.</p>
+    <button id="increaseBtn">확대</button>
+    <button id="decreaseBtn">축소</button>
+    <script>
+        const text = document.getElementById("text");
+        const increaseBtn = document.getElementById("increaseBtn");
+        const decreaseBtn = document.getElementById("decreaseBtn");
+        let fontSize = 16; // 단위: px
+        increaseBtn.addEventListener("click", function () {
+            fontSize += 2;
+            text.style.fontSize = fontSize + "px";
+        });
+        decreaseBtn.addEventListener("click", function () {
+            fontSize = (fontSize > 2) ? fontSize - 2 : fontSize;
+            text.style.fontSize = fontSize + "px";
+        });
+    </script>
+</body>
+
+</html>

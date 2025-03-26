@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 4: insertBefore & nextElementSibling</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- 기존 요소 -->
+        <div id="middle">Middle</div>
+    </div>
+    <script>
+        // container와 middle 요소 선택
+        const container = document.getElementById("container");
+        const middle = document.getElementById("middle");
+
+        // 새로운 div 요소 생성하고 텍스트 추가
+        const newDiv = document.createElement("div");
+        newDiv.textContent = "Before Middle";
+
+        // middle 앞에 새로운 div 삽입
+        container.insertBefore(newDiv, middle);
+
+        // newDiv의 nextElementSibling는 middle이어야 함
+        console.log("newDiv.nextElementSibling:", newDiv.nextElementSibling.id); // 결과: "middle"
+    </script>
+</body>
+
+</html>

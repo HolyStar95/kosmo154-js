@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 2: 스크롤 영역 크기 측정</title>
+    <style>
+        #scroll-container {
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        #inner-content {
+            width: 500px;
+            height: 400px;
+            background-color: #d0eaff;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 2: 스크롤 영역 크기 측정 (scrollWidth, scrollHeight)</h1>
+    <div id="scroll-container">
+        <div id="inner-content">
+            이 콘텐츠는 부모 컨테이너보다 큽니다.
+        </div>
+    </div>
+    <button id="scrollMeasureBtn">스크롤 크기 측정</button>
+    <div id="output"></div>
+    <script>
+        document.getElementById('scrollMeasureBtn').addEventListener('click', function () {
+            var container = document.getElementById('scroll-container');
+            var scrollW = container.scrollWidth;
+            var scrollH = container.scrollHeight;
+            var outputHTML = "scrollWidth: " + scrollW + "px<br>" +
+                "scrollHeight: " + scrollH + "px<br><br>" +
+                "scrollWidth/scrollHeight 는 내부 콘텐츠 전체 크기를 " +
+                "(패딩 포함, border 미포함) 반영합니다.";
+            document.getElementById('output').innerHTML = outputHTML;
+            console.log("scrollWidth:", scrollW);
+            console.log("scrollHeight:", scrollH);
+        });
+    </script>
+</body>
+
+</html>

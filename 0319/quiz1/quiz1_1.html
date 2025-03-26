@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 1: 클릭 좌표 확인하기 - 정답 소스</title>
+</head>
+
+<body>
+    <button id="myButton">클릭해 주세요!</button>
+    <script>
+        // 버튼 요소 선택 후 클릭 이벤트 등록
+        const btn = document.getElementById('myButton');
+        btn.addEventListener('click', function (event) {
+            const x = event.clientX;
+            const y = event.clientY;
+            alert("클릭 위치: (" + x + ", " + y + ")");
+        });
+    </script>
+</body>
+
+</html>

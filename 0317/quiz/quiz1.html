@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <ul id="list">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+    <button id="btn1">li 추가</button>
+    <script>
+        document.getElementById("btn1").addEventListener("click", function () {
+            const new1 = document.createElement("li");
+            new1.textContent = "item 4";
+            document.getElementById("list").append(new1);
+
+        })
+    </script>
+</body>
+
+</html>

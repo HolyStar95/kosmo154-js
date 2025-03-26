@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var firstname = null;
+        var secondname = null;
+        var nickname = "그레이킴";
+
+        // firstname = (fitstname !== null && firstname !== undefined) ? a : b;
+
+        // console.log(firstname || secondname || nickname || "익명의 사용자");
+        console.log(firstname ?? secondname ?? nickname ?? '익명의 사용자');
+
+        let height = 0;
+        console.log(height || 100); // 100
+        console.log(height ?? 100); // 0
+    </script>
+</body>
+</html>

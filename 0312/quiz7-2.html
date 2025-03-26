@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제7 - 스크롤 이벤트로 헤더 스타일 바꾸기</title>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 1);
+            color: white;
+            transition: background-color 0.9s;
+        }
+
+        .content {
+            margin-top: 80px;
+            height: 2000px;
+            /* 스크롤 생성을 위한 높이 */
+        }
+    </style>
+</head>
+
+<body>
+    <header id="pageHeader">헤더 영역</header>
+    <div class="content">
+        스크롤하면서 헤더 배경색의 투명도가 변하는 것을 확인해보세요.
+    </div>
+    <script>
+        const header = document.getElementById("pageHeader");
+        window.addEventListener("scroll", function () {
+            let scrollY = window.scrollY;
+            // 스크롤 위치에 따라 투명도를 0.5 ~ 1 사이로 조절
+            let opacity = Math.max(0.5, 1 - scrollY / 600);
+            header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        });
+    </script>
+</body>
+
+</html>

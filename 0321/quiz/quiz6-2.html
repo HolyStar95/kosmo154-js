@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Live Text Update</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id="liveInput" placeholder="텍스트를 입력하세요">
+    <p>입력값: <span id="liveOutput">입력값 없음</span></p>
+    <script>
+        $(document).ready(function () {
+            $("#liveInput").keyup(function () {
+                var inputVal = $(this).val();
+                    $("#liveOutput").text(inputVal);
+            });
+        });
+    </script>
+</body>
+
+</html>

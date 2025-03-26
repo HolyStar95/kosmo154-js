@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: auto;
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        const div1 = document.getElementById("div1");
+
+        div1.addEventListener("mousemove", function(a){ 
+        const codex = a.clientX;
+        const codey = a.clientY;
+        const pageX = a.pageX;
+        const pageY = a.pageY;
+
+        div1.setAttribute("width" , codex);
+        div1.setAttribute("height" , codey);
+
+        div1.textContent = `현재 좌표 ${codex} , ${codey} / ${pageX} , ${pageY}`;
+    })
+    </script>
+</body>
+</html>

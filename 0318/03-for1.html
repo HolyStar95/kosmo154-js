@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const arr1_1 = [1,2,3,4,5];
+
+        // for in 문
+        // for(let val in arr1_1){
+        //     console.log(`${val} : ${arr1_1[val]}`);
+        // };
+
+        // for of 문
+        for(const val of arr1_1){
+            console.log(val);
+        }
+
+        // const obj1 = {a :1 , b: "abc"};
+
+        // for(const val of obj1){
+        //     console.log(val);
+        // }
+
+        const arr2_1 = ["a","d","b","c"];
+
+        arr2_1.forEach(function(item, index){
+            console.log(`${index} : ${item}`);
+        });
+
+        const obj2 = {
+            0 : "a",
+            1 : "b",
+            2 : "c",
+            length : 3,
+        };
+
+        Array.forEach.call(obj2);
+    </script>
+</body>
+</html>

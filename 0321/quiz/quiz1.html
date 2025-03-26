@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <button id="change">Change Text</button>
+    <p class="output">초기 텍스트</p>
+    <script>
+        $(document).ready(function(){
+            $("#change").click(function(){
+                $(".output").text("Button clicked");
+                alert("버튼 클릭 됨, 텍스트 변경");
+            })
+        }
+            
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            // 파라미터
+            // 매개변수
+            // 아규먼트
+            // 인자
+
+            // 생성자 참조 : 상속을 할 시 생성자 함수는 상속 X
+            // 상속되지 않은 생성자는 자식 클래스의 생성자에서 참조를 해야하는데
+            // 이것을 생성자 참조라고 ㅎ한다.
+
+            // - 자식 클래스의 생성자에는 super(arg1, arg2); 방식으로 부모 생성자 함수
+            // 의 포맷에서 요구하는 인자에 맞춰서 데이터를 제공해야 한다.
+
+            // - 다만 부모 클래스의 생성자에서 요구하는 인자가 없거나 생성자 선언을
+            // 하지 않았을 경우 super는 상황에 따라 생략 가능/
+            constructor(name, age){
+                this.name = name;
+                this.age = age ;
+            }
+            getName(){return this.name;}
+            getAge(){return this.age;}
+        }
+
+        class Employee extends Person{
+            constructor(name, age, dept){
+                super(name, age);
+                this.dept = dept;
+            }
+            getDept(){return this.dept;}};
+
+        const emp1 = new Employee("John", 37, "Sales");
+        console.log(emp1.getName());
+        console.log(emp1.getAge());
+        console.log(emp1.getDept());
+        console.dir(emp1);
+    </script>
+</body>
+</html>

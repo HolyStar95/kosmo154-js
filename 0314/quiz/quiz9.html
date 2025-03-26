@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 9: 데이터 속성 조작하기</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- data-state attribute를 가진 버튼 -->
+    <button id="dataButton" data-state="off">State: off</button>
+    <script>
+        const dataButton = document.getElementById('dataButton');
+
+        dataButton.addEventListener('click', function () {
+            // getAttribute를 사용하여 현재 data-state 읽기
+            let currentState = dataButton.getAttribute('data-state');
+            // 토글: 'off'이면 'on', 'on'이면 'off'
+            let newState = (currentState === 'off') ? 'on' : 'off';
+            // setAttribute로 data-state 업데이트 후 버튼 텍스트 변경
+            dataButton.setAttribute('data-state', newState);
+            dataButton.textContent = "State: " + newState;
+        });
+    </script>
+</body>
+
+</html>

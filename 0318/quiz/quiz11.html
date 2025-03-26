@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="sourceDiv">복제할 내용</div>
+    <div id="targetDiv"></div>
+
+    <script>
+        const scD = document.getElementById("sourceDiv");
+        const tgD = document.getElementById("targetDiv");
+        const clone2 = scD.cloneNode(true);
+
+        tgD.appendChild(clone2);
+
+
+
+    </script>
+</body>
+</html>

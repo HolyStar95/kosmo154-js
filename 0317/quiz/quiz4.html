@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="div1">Middle</div>
+    </div>
+    <button id="btn1">삽입</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function () {
+            const main = document.getElementById("main");
+            const div1 = document.getElementById("div1");
+
+            const middle = document.createElement("div1");
+            middle.textContent = "Before Middle"
+
+            main.insertBefore(middle, div1);
+        })
+    </script>
+</body>
+
+</html>

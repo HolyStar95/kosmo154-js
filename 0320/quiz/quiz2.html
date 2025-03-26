@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #scroll{
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+            
+        }
+        #inner{
+            width: 500px;
+            height: 500px;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <div id="scroll">
+        <div id="inner"></div>
+    </div>
+    <button id="btn1">스크롤 크기 측정</button>
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const scroll = document.getElementById("scroll");
+            const inner = document.getElementById("inner");
+            const sWidth = scroll.scrollWidth;
+            const sHeight = scroll.scrollHeight;
+
+            inner.textContent = `Scroll Width :${sWidth}px \n\n\n\n
+            Scroll Height : ${sHeight}px`;
+
+        })
+    </script>
+</body>
+</html>

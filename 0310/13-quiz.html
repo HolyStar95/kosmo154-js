@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>음료수 키오스크 자판기</h1>
+    <!-- div*3>(span{상품$})+input#stuff$[value="0" min="0"] -->
+    <div>
+        <span>상품1</span>
+        <input type="number" id="stuff1" value="0" min="0">
+    </div>
+    <div>
+        <span>상품2</span>
+        <input type="number" id="stuff2" value="0" min="0">
+    </div>
+    <div>
+        <span>상품3</span>
+        <input type="number" id="stuff3" value="0" min="0">
+    </div>
+
+    <div>
+        총합 : <span id="total">0</span>원
+    </div>
+
+    <button id="res">리셋</button>
+
+    <script>
+        var total =0;
+    </script>
+</body>
+</html>

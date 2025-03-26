@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #measure{
+            margin: 100px auto;
+            height: 300px; 
+            width: 300px;
+            background-color: aquamarine;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="measure"></div>
+    <button id="btn1">측정하기</button>
+    <pre id="output"></pre>
+
+    <script>
+        const output = document.getElementById("output");
+        document.getElementById("btn1").addEventListener("click", function(){
+            const rect = document.getElementById("measure");
+            const getB = rect.getBoundingClientRect();
+            const result = 
+            "left : " + getB.left + "px\n" +
+            "top : " + getB.top +"px\n" +
+            "right : " + getB.right + "px\n" +
+            "bottom : " + getB.bottom + "px\n" +
+            "width : " + getB.width + "px\n" +
+            "height : " + getB.height + "px\n" +
+            "x : " + getB.x + "px\n" +
+            "y : " + getB.y + "px\n";
+        
+            output.textContent = `${result}`;
+        })
+    </script>
+</body>
+</html>

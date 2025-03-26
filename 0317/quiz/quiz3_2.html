@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 3: replaceWith</title>
+</head>
+
+<body>
+    <p id="paragraph">Hello</p>
+    <script>
+        // 기존 p 요소 선택
+        const oldParagraph = document.getElementById("paragraph");
+
+        // 새 p 요소 생성 및 텍스트 추가
+        const newParagraph = document.createElement("p");
+        newParagraph.textContent = "Goodbye";
+
+        // 기존 요소를 새 요소로 교체
+        oldParagraph.replaceWith(newParagraph);
+    </script>
+</body>
+
+</html>

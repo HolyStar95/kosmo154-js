@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 11: prepend & firstElementChild</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <p>Existing Content</p>
+    </div>
+    <script>
+        // wrapper 요소 선택
+        const wrapper = document.getElementById("wrapper");
+
+        // 새로운 p 요소 생성 및 텍스트 노드 추가
+        const newHeader = document.createElement("p");
+        newHeader.textContent = "Header";
+
+        // 맨 앞에 추가 (prepend 사용)
+        wrapper.prepend(newHeader);
+
+        // 확인: 첫 번째 자식이 새 요소인지 검사
+        console.log("첫 번째 자식:", wrapper.firstElementChild.textContent);
+    </script>
+</body>
+
+</html>

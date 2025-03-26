@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 클래스의 글로벌 코딩 컨센션
+        // - 클래스의 글로벌 코딩 컨벤션 규칙은 파스칼 케이스입니다.
+        // - 파스칼 케이스란 첫번째 단어의 글자가 대문자, 나머지는 소문자로 쓴다.
+        
+        // 참고 (Js 한정)
+        // 1. 변수 : 카멜케이스 , 명사형으로 시작
+        // 2. 함수 , 메서드 : 카멜케이스 , 동사형으로 시작
+        // 3. 상수
+        class PersonInfo {
+            setName(name) {this.name = name;}
+            getName() {return name;}
+            setAge(age) {this.age = age;}
+            getAge() {return age;}
+        }
+
+        class Employee extends PersonInfo{
+            setDept(dept){this.dept = dept;}
+            getDept(){return this.dept;}
+        }
+
+        const emp1 = new Employee();
+        emp1.setName("Mike");
+        emp1.setAge(42);
+        emp1.setDept("sales");
+
+        console.dir(emp1);
+    </script>
+</body>
+
+</html>

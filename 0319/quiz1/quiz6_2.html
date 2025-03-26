@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Follow</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 3000px;
+        }
+
+        #div1 {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background-color: lightblue;
+            border: 1px solid blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            /* 마우스 이벤트 방해 안 하도록 설정 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">Move Me</div>
+    <script>
+        const div1 = document.getElementById("div1");
+
+        document.addEventListener("mousemove", function (event) {
+            const codex = event.clientX;
+            const codey = event.clientY;
+
+            // div1을 마우스 위치로 이동
+            div1.style.left = `${codex}px`;
+            div1.style.top = `${codey}px`;
+
+            // 현재 좌표 표시
+            div1.textContent = `X: ${codex}, Y: ${codey}`;
+        });
+    </script>
+</body>
+
+</html>

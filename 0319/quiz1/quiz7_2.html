@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 7: Ctrl+클릭 기본 동작 차단하기 - 정답 소스</title>
+</head>
+
+<body>
+    <a id="myLink" href="https://www.google.com" target="_blank">구글로 이동</a>
+    <script>
+        const link = document.getElementById('myLink');
+        // 클릭하면 ctrlKey 여부 검사 후 기본 동작 차단
+        link.addEventListener('click', function (event) {
+            if (event.ctrlKey) {
+                event.preventDefault();
+                console.log("Ctrl+클릭 감지됨: 이동하지 않습니다.");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 14: 자식 요소 개수 확인하기</title>
+</head>
+
+<body>
+    <div id="parentDiv" style="border:1px solid #ccc; padding:5px;">
+        <div>자식 1</div>
+        <p>자식 2</p>
+        <span>자식 3</span>
+    </div>
+    <script>
+        var parentDiv = document.getElementById("parentDiv");
+        var childCount = parentDiv.children.length;
+        console.log("자식 요소 개수: " + childCount);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // shift : pop 의 반대 연산 (앞에서부터 뽑아오기)
+        const arr1_1 = ['a','b','c'];
+        const arr1_2 = arr1_1.shift();
+        console.log(arr1_1); // "b" , "c"
+        console.log(arr1_2); // "a"
+
+        // concat : 배열 병합
+        const arr2_1 = ["a","b","c"];
+        const arr2_2 = ['d','e','f'];
+        const arr2_3 = arr2_1.concat(arr2_2);
+        console.log(arr2_1); //["a","b","c"]
+        console.log(arr2_2); // ["d","e","f"]
+        console.log(arr2_3); // ["a","b","c","d","e","f"]
+        const arr2_4 = arr2_1.concat("d");
+        console.log(arr2_4); // ["a","b","c","d"]
+
+        // join : 데이터의 구분자를 넣어 하나의 string으로 출력
+        const arr3_1 = ["a","b","c"];
+        const arr3_2 = ["/"];
+        const arr3_3 = arr3_1.join(arr3_2);
+        console.log(arr3_1); // ["a","b","c"]
+        console.log(arr3_2); // "/"
+        console.log(arr3_3); // a/b/c
+
+        // sort : 배열을 정렬할 때 쓰는 메서드
+        const arr4_1 = ["e","b","d","c","a"];
+        const arr4_2 = arr4_1.sort();
+        console.log(arr4_2); // ["a","b","c","d","e"]
+        let arr4_3 = [...arr4_2];
+        arr4_3.push("f");
+        console.log(arr4_2); // ["a","b","c","d","e","f"]
+        console.log(arr4_3);
+
+        console.log("------------------------");
+
+        // sort 맹점2
+        const arr5_1 = [2,1,3,10];
+        // arr5_1.sort(); // 문자 비교
+        // arr5_1.sort(function(a,b){ // 양수면 a가 우선, 음수면 b가 우선, 0면 변화 없음
+        //     if(a > b) return 1;
+        //     if(a === b) return 0;
+        //     if(a < b) return -1;
+        // });
+        arr5_1.sort(function(a,b){
+            return a-b;
+        });
+        console.log(arr5_1); // 1,2,3,10
+        console.log("------------------------");
+
+        // sort 맹점3 - 문자열 내림차순
+        const arr6_1 = ["apple","a", "area"];
+        console.log(arr6_1.sort(function(a,b){
+            if(a < b) return 1;
+            if(a > b) return -1;
+            if(a === b) return 0;
+        }));
+
+    </script>
+</body>
+</html>

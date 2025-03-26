@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 19: before & after를 통한 가운데 삽입</title>
+</head>
+
+<body>
+    <div id="left">Left</div>
+    <div id="right">Right</div>
+    <script>
+        // left와 right 요소 선택
+        const left = document.getElementById("left");
+        const right = document.getElementById("right");
+
+        // 가운데 삽입할 새로운 div 생성
+        const centerDiv = document.createElement("div");
+        centerDiv.textContent = "Center";
+
+        // left의 후위나 right의 전위에 삽입 (두 방법 중 하나 사용 가능)
+        left.after(centerDiv); // 또는 right.before(centerDiv);
+
+        console.log("가운데 요소가 삽입되었습니다:", centerDiv.textContent);
+    </script>
+</body>
+
+</html>

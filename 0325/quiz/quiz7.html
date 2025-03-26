@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 7: End-of-Video Message and Reset</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        #message {
+            margin-top: 1em;
+            font-size: 18px;
+            color: red;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 7: End-of-Video Message and Reset</h1>
+    <video id="myVideo" width="640" height="360" controls>
+        <source src="/0325/videos/sample1.mp4" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+    <br>
+    <button id="resetBtn" style="display:none;">처음부터 다시 재생</button>
+    <div id="message"></div>
+    <script>
+        const video = document.getElementById('myVideo');
+        const message = document.getElementById('message');
+        const resetBtn = document.getElementById('resetBtn');
+        video.addEventListener('ended', function () {
+            message.innerText = "재생이 종료되었습니다.";
+            resetBtn.style.display = "inline-block";
+        });
+        resetBtn.addEventListener('click', function () {
+            video.currentTime = 0;
+            video.play();
+            message.innerText = "";
+            resetBtn.style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

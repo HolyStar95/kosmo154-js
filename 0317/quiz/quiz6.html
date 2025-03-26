@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="menu">
+        <li>1번째</li>
+        <li>2번째</li>
+        <li>3번째</li>
+        <li>4번째</li>
+    </ul>
+    <button id="btn1">2번째 삭제</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const menu = document.getElementById("menu");
+            const secondItem = menu.children[1];
+            menu.removeChild(secondItem);
+        })
+    </script>
+</body>
+</html>

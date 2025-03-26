@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="list">
+        <p id="first">First Paragraph</p>
+    </div>
+    <button id="btn1">삽입</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const list = document.getElementById("list");
+            const first = document.getElementById("first");
+            const np = document.createElement("p");
+            np.textContent = "New Paragraph";
+
+            list.insertBefore(np,first);
+        })
+    </script>
+</body>
+</html>

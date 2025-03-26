@@ -1,0 +1,44 @@
+<html>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 3: 공통 attribute 추가하기</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="item">첫 번째 아이템</li>
+        <li class="item">두 번째 아이템</li>
+        <li class="item">세 번째 아이템</li>
+    </ul>
+    <script>
+        // 모든 .item 요소 선택 및 인덱스 부여
+        const items = document.querySelectorAll('.item');
+        items.forEach(function (item, index) {
+            item.setAttribute('data-index', index);
+            // 각 아이템에 인덱스 값을 보여주기 위해 텍스트를 추가
+            item.textContent += " (data-index: " + index + ")";
+        });
+    </script>
+</body>
+
+</html>

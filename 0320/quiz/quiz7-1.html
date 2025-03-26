@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 7: 무한 스크롤 콘텐츠 로딩</title>
+    <style>
+        #content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        .post {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #fff9c4;
+            border: 1px solid #fbc02d;
+        }
+
+        #loading {
+            text-align: center;
+            font-weight: bold;
+            display: none;
+        }
+        body{
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 7: 무한 스크롤 콘텐츠 로딩</h1>
+    <div id="content">
+        <div class="post">포스트 1</div>
+        <div class="post">포스트 2</div>
+        <div class="post">포스트 3</div>
+        <div class="post">포스트 4</div>
+        <div class="post">포스트 5</div>
+    </div>
+    <div id="loading">로딩 중...</div>
+    <script>
+        let loading = false;
+        let postCount = 5;
+        function loadMoreContent() {
+            if (loading) return;
+            loading = true;
+            document.getElementById('loading').style.display = 'block';
+            // 실제 ajax 를 대신해 1 초 지연 후 콘텐츠 추가
+            setTimeout(function () {
+                let content = document.getElementById('content');
+                for (let i = 1; i <= 3; i++) {
+                    postCount++;
+                    let newPost = document.createElement('div');
+                    newPost.className = "post";
+                    newPost.textContent = "포스트 " + postCount;
+                    content.appendChild(newPost);
+                }
+                loading = false;
+                document.getElementById('loading').style.display = 'none';
+            }, 100);
+        }
+        window.addEventListener('scroll', function () {
+            var d = document.documentElement;
+            if (d.scrollTop + d.clientHeight >= d.scrollHeight - 50) {
+                loadMoreContent();
+            }
+        });
+    </script>
+</body>
+
+</html>

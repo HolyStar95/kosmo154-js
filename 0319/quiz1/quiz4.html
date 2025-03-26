@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="여기에 입력하세요">
+
+    <script>
+        const myInput = document.getElementById("myInput");
+
+        myInput.addEventListener("keydown", function(a){
+            const key1 = a.key;
+            const code1 = a.code;
+            if(key1 === "Enter"){
+                alert("Enter 키가 눌렸습니다")
+            }
+        })
+    </script>
+</body>
+</html>

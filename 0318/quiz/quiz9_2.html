@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 9: 마우스 오버 시 이미지 변경하기</title>
+</head>
+
+<body>
+    <img id="myImage" src="./cat.jpeg" alt="이미지" style="width:150px;">
+    <script>
+        var myImage = document.getElementById("myImage");
+        myImage.addEventListener("mouseover", function () {
+            myImage.src = "./cat.jpeg";
+        });
+        myImage.addEventListener("mouseout", function () {
+            myImage.src = "./dog.png";
+        });
+    </script>
+    <!-- 참고: image1.jpg 와 image2.jpg 파일을 본인의 환경에 맞게 준비하세요 -->
+</body>
+
+</html>

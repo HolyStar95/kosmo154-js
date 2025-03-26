@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 2: prepend</title>
+</head>
+
+<body>
+    <div id="header">
+        <p>Existing Content</p>
+    </div>
+    <script>
+        // header 요소 선택
+        const header = document.getElementById("header");
+
+        // 새로운 h1 요소 생성 및 텍스트 노드 추가
+        const newHeading = document.createElement("h1");
+        newHeading.textContent = "Welcome";
+
+        // header의 맨 앞에 추가
+        header.prepend(newHeading);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tooltip Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .tooltip {
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hover-me" style="display:inline-block; margin:50px; padding:10px; border:1px solid
+#ccc;">
+        마우스를 올려보세요
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".hover-me").mouseenter(function (e) {
+                // 요소 위치를 기준으로 툴팁 추가
+                var tooltip = $('<div class="tooltip">툴팁 설명</div>');
+                $("body").append(tooltip);
+                tooltip.css({
+                    top: e.pageY + 10,
+                    left: e.pageX + 10
+                });
+            }).mouseleave(function () {
+                $(".tooltip").remove();
+            });
+        });
+    </script>
+</body>
+
+</html>

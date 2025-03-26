@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 14: 동적 글꼴 크기 적용 (dataset)</title>
+    <style>
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="text" data-font-size="16">Text 1</p>
+    <p class="text" data-font-size="20">Text 2</p>
+    <p class="text" data-font-size="24">Text 3</p>
+    <script>
+        // 페이지 로드시 모든 .text 요소에 대해 data-font-size 값을 적용
+        const texts = document.querySelectorAll('.text');
+        console.log(texts);
+        texts.forEach(function (textElement) {
+            const fontSize = textElement.dataset.fontSize;
+            // 숫자만 있을 경우 "px" 단위를 붙여서 적용
+            textElement.style.fontSize = fontSize + "px";
+        });
+    </script>
+</body>
+
+</html>

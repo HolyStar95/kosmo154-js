@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 9: 총합과 평균 계산하기</title>
+</head>
+
+<body>
+    <h1>문제 9: 총합과 평균 계산하기</h1>
+    <input type="text" id="input9" placeholder="숫자들을 콤마로 구분 (예: 4,8,15,16)">
+    <button onclick="calcSumAvg()">계산하기</button>
+    <div id="result9"></div>
+    <script>
+        function calcSumAvg() {
+            var input = document.getElementById("input9").value;
+            var total = 0;
+            var count = 0;
+            var numberStr = "";
+            input += ",";
+            for (var i = 0; i < input.length; i++) {
+                var ch = input.charAt(i);
+                if (ch !== ",") {
+                    numberStr += ch;
+                } else {
+                    if (numberStr.trim() !== "") {
+                        total += Number(numberStr.trim());
+                        count++;
+                    }
+                    numberStr = "";
+                }
+            }
+            var avg = count ? total / count : 0;
+            document.getElementById("result9").innerHTML = "총합: " + total + ", 평균: " + avg;
+        }
+    </script>
+</body>
+
+</html

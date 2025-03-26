@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //자바스크립트 특수 연산
+        console.log("Cat" && true); // true
+        console.log(!!"Cat");//true
+        console.log(!!""); //false
+        console.log(!!" "); //true space도 값으로 침
+
+        console.log(false && "Cat"); //false
+        console.log("Dog" && "Cat"); //Cat
+        console.log("Dog" && false); //false
+        console.log(true && "Cat"); //Cat
+        console.log("" && true); // space
+        console.log("------------");
+        console.log(false || "Cat"); //Cat
+        console.log("Dog" || "Cat"); //Dog
+        console.log("Dog" || "Cat" || null); //Dog
+
+        console.log(!!{}); //true
+        console.log(!!null); //false
+    </script>
+</body>
+</html>

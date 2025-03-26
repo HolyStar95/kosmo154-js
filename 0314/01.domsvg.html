@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>SVG 속성 조작 예제</h1>
+
+    <svg width="300" height="200" viewBox="0 0 300 200">
+        <circle id="my-circle" cx="150" cy="100" r="50" fill="red"/>
+    </svg>
+
+    <button id="change-color">색상 변경</button>
+    <!--
+        문제1. 원의 가로 위치를 무작위로 변경하는 로직을 작성하세요
+        - 버튼을 누르게 되면 원의 가운데 위치가 50~250 사이의 숫자로 변경되니다.
+        - 해당 숫자를 x축에 반영하여 가로 위치를 무작위로 바꾸는 이벤트를 작성하세요
+     -->
+    <button id="move-circle">위치 변경</button>
+    <!--
+        문제2, 원의 반지름을 무작위 값으로 변경하는 로직을 작성하세요.
+        - 버턴을 누르게 되면 원의 반지름이 30부터 70사이의 숫자로 변경됩니다.
+        - 해당 숫자를 r에 반영하여 반지름을 무작위로 바꾸는 이벤트를 작성하세요-->
+    <button id="resize-circle">크기 변경</button>
+
+    <script>
+        //색상 변경하는 이벤트
+
+        document.getElementById("change-color").addEventListener("click", function(){
+            const circle = document.getElementById("my-circle");
+            //  원 색상이 빨간색이면 파란색으로 파란색이면 빨간색으로 마치 토글처럼 변경
+            
+            // circle.classList.toggle("color");
+            const currentFill = circle.getAttribute("fill");
+            circle.setAttribute("fill", currentFill === 'red' ? 'blue' : 'red');
+        });
+
+        document.getElementById("move-circle").addEventListener("click", function(){
+            const circle = document.getElementById("my-circle");
+            let random = Math.floor(Math.random()*200)+50;
+            circle.setAttribute("cx", random);
+        });
+
+        document.getElementById("resize-circle").addEventListener("click", function(){
+            const circle = document.getElementById("my-circle");
+            let random2 = Math.floor(Math.random()*40)+30;
+            circle.setAttribute("r", random2);
+        });
+    </script>
+</body>
+</html>

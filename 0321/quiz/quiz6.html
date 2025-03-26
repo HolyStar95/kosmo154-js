@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="liveinput" placeholder="텍스트를 입력하세요.">
+    <span id="liveoutput"></span>
+
+    <script>
+        $(document).ready(function(){
+            $("#liveinput").keyup(function(){
+                const live = document.getElementById("liveoutput");
+
+                live.textContent
+            })
+        })
+    </script>
+</body>
+</html>

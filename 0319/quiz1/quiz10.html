@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 10: 키보드 장기 누름 감지하기 - 정답 소스</title>
+</head>
+
+<body>
+    <input id="repeatInput" type="text" placeholder="키를 길게 눌러보세요...">
+    <script>
+        const input = document.getElementById('repeatInput');
+        // 키 입력 이벤트 등록, repeat 속성 확인
+        input.addEventListener('keydown', function (event) {
+            if (event.repeat) {
+                console.log("키가 반복 입력되고 있음: " + event.key);
+            } else {
+                console.log("키 입력: " + event.key);
+            }
+        });
+    </script>
+</body>
+
+</html>

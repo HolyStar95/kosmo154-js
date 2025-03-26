@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  1 - dufault parameter
+        function func1(a,b = 1){
+            return(a+b);
+        }
+        console.log(func1(3)); // 값은 : 4
+
+        // 2 - rest parameter - 모든 값을 배열로 가져온다
+        // 배열 단위 속성으로 컨트롤 할 수 있음
+        function func2(...param){
+            console.log(param);
+        }
+
+        func2(2, 3, 4);
+
+        // 2 - rest parameter2 - (a,b,...param) 
+        function func2(a,b, ...param){
+            console.log(a,b);
+            console.log(...param);
+        }
+
+        func2(2, 3, 4, 5,6);
+    </script>
+</body>
+</html>

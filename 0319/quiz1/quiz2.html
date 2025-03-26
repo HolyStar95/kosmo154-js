@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="modifierBtn">버튼</button>
+
+    <script>
+        document.getElementById("modifierBtn").addEventListener("click", function(e){
+            if(e.shiftKey){
+                alert("shiftKey 눌림");
+            }else if(e.ctrlKey){
+                alert("ctrlKey 눌림");
+            }else if(e.altKey){
+                alert("altKey 눌림");
+            }else if(e.metaKey){
+                alert("metaKey 눌림");
+            }else{
+                alert("그냥 눌림");
+            }
+        });
+    </script>
+</body>
+</html>

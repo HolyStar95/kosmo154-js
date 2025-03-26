@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 6: removeChild</title>
+</head>
+
+<body>
+    <ul id="menu">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        // 메뉴 요소 선택
+        const menu = document.getElementById("menu");
+
+        // 두 번째 li 요소 선택 (children는 0부터 시작)
+        const secondItem = menu.children[1];
+
+        // 두 번째 요소 삭제
+        menu.removeChild(secondItem);
+    </script>
+</body>
+
+</html>

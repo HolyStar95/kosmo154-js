@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 1: 요소의 크기 계산</title>
+    <style>
+        /* test-box 는 고정 폭, 패딩, 보더, 마진이 적용됨 */
+        #test-box {
+            width: 300px;
+            padding: 20px;
+            /* 좌우 합산 40px */
+            border: 5px solid #000;
+            /* 좌우 합산 10px */
+            margin: 15px;
+            background-color: #f0f0f0;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 1: 요소의 크기 계산 (clientWidth vs. offsetWidth)</h1>
+    <div id="test-box">
+        이 박스의 크기를 측정합니다.
+    </div>
+    <button id="measureBtn">크기 측정</button>
+    <div id="output"></div>
+    <script>
+        document.getElementById('measureBtn').addEventListener('click', function () {
+            var box = document.getElementById('test-box');
+            var clientW = box.clientWidth;
+            var offsetW = box.offsetWidth;
+            // clientWidth 는 content 와 padding 을 포함함.
+            // offsetWidth 는 content, padding, border 를 포함함.
+            var outputHTML = "clientWidth: " + clientW + "px<br>" +
+                "offsetWidth: " + offsetW + "px<br><br>" +
+                "여기서 예상 결과는:<br>" +
+                "clientWidth: 300 + (20*2) = 340px<br>" +
+                "offsetWidth: 300 + (20*2) + (5*2) = 350px";
+            document.getElementById('output').innerHTML = outputHTML;
+            console.log("clientWidth:", clientW);
+            console.log("offsetWidth:", offsetW);
+        });
+    </script>
+</body>
+
+</html>

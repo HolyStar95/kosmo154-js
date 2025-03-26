@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 4: attribute 삭제하기</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .tooltip {
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px dashed #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tooltip" title="툴팁 1">툴팁 요소 1</div>
+    <div class="tooltip" title="툴팁 2">툴팁 요소 2</div>
+    <div class="tooltip" title="툴팁 3">툴팁 요소 3</div>
+
+    <script>
+        // 모든 .tooltip 요소 선택 후 title attribute 삭제
+        const tooltips = document.querySelectorAll('.tooltip');
+        tooltips.forEach(function (elem) {
+            elem.removeAttribute('title');
+        });
+        console.log("모든 tooltip 요소에서 title attribute가 삭제되었습니다.");
+    </script>
+</body>
+
+</html>

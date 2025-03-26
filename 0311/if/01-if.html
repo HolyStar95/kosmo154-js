@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="click1()">버튼</button>
+
+    <script>
+        function click1(){
+            var a = parseInt(document.getElementById("input").value);
+
+            if (a > 0){
+                alert(`${a}`)
+            }
+        }
+    </script>
+</body>
+</html>

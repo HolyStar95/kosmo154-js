@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>무작위 배경색 변경</h1>
+<button id="bgc">배경색 변경</button>
+</div>
+    <script>
+        document.getElementById("bgc").addEventListener("click", function(){
+            let bgc = Math.floor(Math.random()*3+1);
+        switch(bgc){
+            case 1 : document.querySelector("div").style.backgroundColor="red"; break;
+            case 2 : document.querySelector("div").style.backgroundColor="green"; break;
+            case 3 : document.querySelector("div").style.backgroundColor="blue"; break;
+        }
+    });
+        
+    </script>
+</body>
+</html>

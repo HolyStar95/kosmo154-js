@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 12: appendChild & lastElementChild</title>
+</head>
+
+<body>
+    <div id="main">
+        <p>Section 1</p>
+    </div>
+    <script>
+        // main 요소 선택
+        const main = document.getElementById("main");
+
+        // 새로운 section 요소 생성 및 텍스트 노드 추가
+        const newSection = document.createElement("section");
+        newSection.textContent = "New Section";
+
+        // main의 마지막에 새 section 추가
+        main.appendChild(newSection);
+
+        // 확인: 마지막 자식 요소는 newSection 이어야 함
+        console.log("마지막 자식:", main.lastElementChild.textContent);
+    </script>
+</body>
+
+</html>

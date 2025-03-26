@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">Hello</p>
+    <button id="btn1">ReplaceSwitch</button>
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            var p1 = document.getElementById("p1");
+            var switch1 = document.createElement("p");
+            switch1.textContent = "Goodbye";
+            p1.replaceWith(switch1);
+        })
+    </script>
+</body>
+</html>

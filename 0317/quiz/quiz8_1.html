@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="note">요소</div>
+    <button id="btn1">새로운 요소 생성</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+           const note = document.querySelector(".note");
+           const newnote = document.createElement("div");
+           newnote.textContent = "Note start";
+
+           note.before(newnote);
+        });
+    </script>
+</body>
+</html>

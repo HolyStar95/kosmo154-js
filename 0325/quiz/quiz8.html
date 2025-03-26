@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 8: Clickable Progress Bar</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        #progressContainer {
+            width: 640px;
+            height: 20px;
+            background: #ddd;
+            margin: 1em auto;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #progress {
+            height: 100%;
+            width: 0;
+            background: #76a5af;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 8: Clickable Progress Bar for Seeking</h1>
+    <video id="myVideo" width="640" height="360" controls>
+        <source src="/0325/videos/sample1.mp4" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+    <div id="progressContainer">
+        <div id="progress"></div>
+    </div>
+    <script>
+        const video = document.getElementById('myVideo');
+        const progressContainer = document.getElementById('progressContainer');
+        const progress = document.getElementById('progress');
+        video.addEventListener('timeupdate', function () {
+            const percent = (video.currentTime / video.duration) * 100;
+            progress.style.width = percent + '%';
+        });
+        progressContainer.addEventListener('click', function (e) {
+            const rect = progressContainer.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const newTime = (clickX / progressContainer.clientWidth) * video.duration;
+            video.currentTime = newTime;
+        });
+    </script>
+</body>
+
+</html>

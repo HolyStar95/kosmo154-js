@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-color: lightcyan;
+    }
+</style>
+</head>
+<body>
+    <div id="Display"></div>
+    <script>
+        window.addEventListener("mousemove", function(a){
+            const div1 = document.getElementById("Display");
+            const codeX = a.clientX;
+            const codeY = a.clientY;
+            const result = `마우스 위치 : (${codeX}, ${codeY})`;
+
+            div1.textContent= result;
+
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 13: children 속성 활용</title>
+</head>
+
+<body>
+    <div id="gallery">
+        <img src="img1.jpg" alt="Image 1">
+        <img src="img2.jpg" alt="Image 2">
+        <img src="img3.jpg" alt="Image 3">
+        <img src="img4.jpg" alt="Image 4">
+    </div>
+    <script>
+        // gallery 요소 선택
+        const gallery = document.getElementById("gallery");
+
+        // children 배열을 사용하여 네 번째 <img> 선택 (index 3)
+        const fourthImage = gallery.children[3];
+
+        // alt 속성 수정
+        fourthImage.setAttribute("alt", "Gallery Image");
+
+        console.log("네 번째 이미지는 새 alt:", fourthImage.getAttribute("alt"));
+    </script>
+</body>
+
+</html>

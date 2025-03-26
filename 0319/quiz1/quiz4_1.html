@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 4: 키보드 입력 감지하기 - 정답 소스</title>
+</head>
+
+<body>
+    <input id="myInput" type="text" placeholder="여기에 입력하세요...">
+    <script>
+        const inputField = document.getElementById('myInput');
+        // 입력 필드에 키 다운 이벤트 등록
+        inputField.addEventListener('keydown', function (event) {
+            console.log("누른 키: " + event.key);
+            console.log("키 코드: " + event.code);
+            if (event.key === "Enter") {
+                console.log("Enter 키가 눌렸습니다.");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="changeStyleDiv">스타일 변경 대상 텍스트</div>
+    <button id="btn">폰트 크기 확대</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            const font = document.getElementById("changeStyleDiv");
+            const current = window.getComputedStyle(font).fontSize;
+            const change = parseInt(current);
+            font.style.fontSize = (change * 2) + "px";
+
+        })
+    </script>
+</body>
+</html>

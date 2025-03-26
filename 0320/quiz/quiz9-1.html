@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 9: 실시간 스크롤 위치 표시기</title>
+    <style>
+        #scroll-indicator {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(76, 175, 80, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-family: sans-serif;
+        }
+
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 9: 실시간 스크롤 위치 표시기</h1>
+    <p>
+        페이지에 내용이 많아 스크롤이 발생하는 경우, 아래 고정 영역에 실시간 스크롤 위치가
+        표시됩니다.
+    </p>
+    <!-- 충분한 스크롤을 위해 더 많은 내용을 추가 -->
+    <div style="height: 1500px;"></div>
+    <div id="scroll-indicator">현재 스크롤 위치: 0px</div>
+    <script>
+        window.addEventListener('scroll', function () {
+            var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+            document.getElementById('scroll-indicator').textContent = "현재 스크롤 위치: " +
+                scrollPos + "px";
+        });
+    </script>
+</body>
+
+</html>

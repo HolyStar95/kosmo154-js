@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // customElement 선언
+        class CustomElem extends HTMLElement{
+            // 상위 커스텀 엘리먼츠의 초기화를 돕는 생성자를 호출
+            constructor(){
+                super();
+            }
+
+            // 커스텀 엘리먼츠가 생성(렌더링) 될 때 실행되는 콜백 함수
+            connectedCallback(){
+                this.render();
+                console.log("ConnectedCallback 호출");
+            }
+            // 요소의 속성이 추가, 제거, 업데이트, 교체 되는 부분을 관찰하고 호출
+            // 이때 observerdAttributes 속성에 나열된 특성이 바뀔 시 호출된다.
+            attributeChangedCallback(attName, oldVal, newVal){
+                this.render();
+                console.log("attributeChangedcallback 호출")
+                console.log(`attrName : ${attrName}, oldVal : ${oldVal}, newVal : ${newVal}`);
+            }
+            //attributeChangedCallback에서 관찰하는 항목을 리턴
+            static get observerdAttributes(){
+                return ['title'];
+            }
+
+            get title(){
+                return this.getAttribute('title');
+            }
+            // custom elment가 제거될 때 효출
+            disconnectedCallback(){
+                alert("bye bye");
+                console.log("disconnectedCallback 호출");
+            }
+
+            // 추가로 렌더링할 메서드(사용자 정의)
+            render(){
+                this.innerHTML = `<h1>${this.title}</h1>`;
+            }
+        }
+    </script>
+</body>
+</html>

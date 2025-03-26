@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="footer"></div>
+    <button id="btn1">삽입</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const footer = document.getElementById("footer");
+            const span = document.createElement("span");
+            span.textContent = "Footer Info";
+
+            footer.append(span);
+        })
+    </script>
+</body>
+</html>

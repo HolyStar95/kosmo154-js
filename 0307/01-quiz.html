@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>홀짝 판별기</h1>
+    <input type="text" id="number-input" placeholder="숫자 입력" size="50px , 50px">
+    <button id="chkbtn">검사</button>
+    <div class="result"></div>
+    <script>
+        document.getElementById("chkbtn").addEventListener("click", function(){
+    // console.log("버튼 눌림");
+    //input에 입력된 값을 받아서 변수에 저장 - 저장된 변수의 값 찍어보기
+    var inputVal = parseInt(document.getElementById("number-input")).value;
+    document.getElementById("result").textContent= ((inputVal % 2) === 0) ? `${inputVal}은/는 짝수입니다.` : `${inputVal}은/는 홀수입니다.`; 
+});
+    </script>
+</body>
+</html>

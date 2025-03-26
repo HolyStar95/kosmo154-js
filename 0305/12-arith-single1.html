@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1
+        var x1 = 3;
+        console.log(-x1); // -3
+        
+        //2
+        var x2 = "4";
+        console.log(typeof(-x2));
+
+        //3
+        var x3 = "3";
+        console.log(x3);
+        console.log(+(x3));
+
+        //4
+        console.log(+true); // 1
+        console.log(+false); // 0
+        console.log(+null); // 0
+        console.log(+undefined); // nan
+        console.log(+Infinity); // infinity
+
+        //5
+        var y1 = 3;
+        console.log(++y1); // 4 증감연산자 부호위치중요★
+        console.log(y1++); // 4
+        console.log(y1); // 5
+
+        var y2 = 5;
+        console.log(--y2); // 4
+        console.log(y2--); // 4
+        console.log(y2); // 3
+
+    </script>
+</body>
+</html>

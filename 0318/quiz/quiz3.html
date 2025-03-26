@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="btn1">리스트 추가</button>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", function(){
+            const myList = document.querySelector("#myList");
+            const newList = document.createElement("li");
+            newList.textContent = "New List";
+
+            myList.appendChild(newList);
+        });
+    </script>
+</body>
+</html>

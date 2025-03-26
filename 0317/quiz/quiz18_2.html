@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 18: remove</title>
+</head>
+
+<body>
+    <p>Before removal.</p>
+    <span class="temp">Temporary</span>
+    <p>After removal.</p>
+    <script>
+        // temp 클래스 요소 선택
+        const tempElement = document.querySelector(".temp");
+
+        // 요소 삭제
+        tempElement.remove();
+
+        console.log("임시 요소가 삭제되었습니다.");
+    </script>
+</body>
+
+</html>

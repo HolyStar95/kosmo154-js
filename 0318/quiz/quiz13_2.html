@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 15: 동적 스타일 변경 (폰트 크기 확대하기)</title>
+</head>
+
+<body>
+    <div id="changeStyleDiv" style="border:1px solid #ccc; padding:5px;">스타일 변경 대상
+        텍스트</div>
+    <button id="growBtn">폰트 크기 확대</button>
+    <script>
+        var growBtn = document.getElementById("growBtn");
+        var changeStyleDiv = document.getElementById("changeStyleDiv");
+        growBtn.addEventListener("click", function () {
+            var currentFontSize = window.getComputedStyle(changeStyleDiv).fontSize;
+            var fontSizeNum = parseFloat(currentFontSize);
+            changeStyleDiv.style.fontSize = (fontSizeNum * 2) + "px";
+        });
+    </script>
+</body>
+
+</html>

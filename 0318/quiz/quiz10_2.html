@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 10: 폼 유효성 검사하기</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <input type="text" id="username" placeholder="이름 입력">
+        <button type="submit">제출</button>
+    </form>
+    <script>
+        var myForm = document.getElementById("myForm");
+        myForm.addEventListener("submit", function (event) {
+            var username = document.getElementById("username").value;
+            if (username.trim() === "") {
+                event.preventDefault();
+                alert("이름을 입력하세요.");
+            }
+        });
+    </script>
+</body>
+
+</html>

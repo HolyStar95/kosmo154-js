@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="num1" class="lotto-number">?</div>
+        <div id="num2" class="lotto-number">?</div>
+        <div id="num3" class="lotto-number">?</div>
+        <div id="num4" class="lotto-number">?</div>
+        <div id="num5" class="lotto-number">?</div>
+        <div id="num6" class="lotto-number">?</div>
+    </div>
+    <button id="btn">로또 번호 추첨!</button>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function(){
+            var num1 = document.getElementById("num1");
+            var num2 = document.getElementById("num2");
+            var num3 = document.getElementById("num3");
+            var num4 = document.getElementById("num4");
+            var num5 = document.getElementById("num5");
+            var num6 = document.getElementById("num6");
+
+            var ran1 = Math.floor(Math.random()*45)+1;
+            var ran2 = Math.floor(Math.random()*45)+1;
+            var ran3 = Math.floor(Math.random()*45)+1;
+            var ran4 = Math.floor(Math.random()*45)+1;
+            var ran5 = Math.floor(Math.random()*45)+1;
+            var ran6 = Math.floor(Math.random()*45)+1;
+
+            num1.textContent = ran1;
+            num2.textContent = ran2;
+            num3.textContent = ran3;
+            num4.textContent = ran4;
+            num5.textContent = ran5;
+            num6.textContent = ran6;
+        })
+    </script>
+</body>
+</html>

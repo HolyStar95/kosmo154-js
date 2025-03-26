@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 6: Fullscreen Toggle</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        button {
+            padding: 0.5em 1em;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제 6: Fullscreen Toggle</h1>
+    <video id="myVideo" width="640" height="360" controls>
+        <source src="/0325/videos/sample1.mp4" type="video/mp4">
+        브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+    <br>
+    <button id="fullscreenBtn">전체 화면 토글</button>
+    <script>
+        const video = document.getElementById('myVideo');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        fullscreenBtn.addEventListener('click', function () {
+            if (!document.fullscreenElement) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) { /* Safari */
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { /* IE11 */
+                    video.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

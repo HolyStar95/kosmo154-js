@@ -1,0 +1,25 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Change Text Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <button id="changeTextBtn">Change Text</button>
+    <p class="output">초기 텍스트</p>
+    <script>
+        $(document).ready(function () {
+            $("#changeTextBtn").click(function () {
+                $(".output").text("Button clicked!");
+                console.log("버튼 클릭됨, 텍스트 변경");
+            });
+        });
+    </script>
+</body>
+
+</html>
+```

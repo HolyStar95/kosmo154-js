@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 8: 반응형 전체 화면 배경 구현</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #fullscreen-bg {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        }
+
+        #viewport-size {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            font-family: sans-serif;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fullscreen-bg"></div>
+    <div id="viewport-size"></div>
+    <script>
+        function resizeBackground() {
+            var width = document.documentElement.clientWidth;
+            var height = document.documentElement.clientHeight;
+            var bg = document.getElementById('fullscreen-bg');
+            bg.style.width = width + "px";
+            bg.style.height = height + "px";
+            var viewportSize = document.getElementById('viewport-size');
+            viewportSize.textContent = "현재 뷰포트: " + width + " x " + height + "px";
+        }
+        window.addEventListener('resize', resizeBackground);
+        window.addEventListener('load', resizeBackground);
+    </script>
+</body>
+
+</html>

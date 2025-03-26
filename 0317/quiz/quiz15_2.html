@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 15: cloneNode & before</title>
+</head>
+
+<body>
+    <ul>
+        <li class="item">Item A</li>
+    </ul>
+    <script>
+        // 첫 번째 .item 요소 선택
+        const originalItem = document.querySelector(".item");
+
+        // 요소를 완전히 복제 (자식 포함)
+        const cloneItem = originalItem.cloneNode(true);
+
+        // 원본 요소 앞에 복제본 삽입
+        originalItem.before(cloneItem);
+
+        console.log("클론 요소 추가됨:", cloneItem.textContent);
+    </script>
+</body>
+
+</html>

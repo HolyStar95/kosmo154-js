@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 16: replaceWith를 사용한 제목 교체</title>
+</head>
+
+<body>
+    <h2 id="title">Old Title</h2>
+    <script>
+        // 기존 제목 선택
+        const title = document.getElementById("title");
+
+        // 새 제목 요소 생성 및 텍스트 노드 추가
+        const newTitle = document.createElement("h2");
+        newTitle.textContent = "New Title";
+
+        // 제목 교체
+        title.replaceWith(newTitle);
+    </script>
+</body>
+
+</html>

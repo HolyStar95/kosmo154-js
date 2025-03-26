@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>문제 8: before & previousElementSibling</title>
+</head>
+
+<body>
+    <!-- 첫 번째 발견되는 note 요소 -->
+    <div class="note">Some note</div>
+    <script>
+        // .note 요소 선택
+        const note = document.querySelector(".note");
+
+        // 새로운 div 생성 및 텍스트 노드 추가
+        const newDiv = document.createElement("div");
+        newDiv.textContent = "Note Start";
+
+        // note 요소 앞에 삽입
+        note.before(newDiv);
+
+        // newDiv의 이전 요소(없으면 null)를 확인
+        console.log("newDiv.previousElementSibling:", newDiv.previousElementSibling);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p1 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1">가나다라마바</p>
+    <button id="sizeup">확대</button>
+    <button id="sizedown">축소</button>
+
+    <script>
+        let up = document.getElementById("sizeup");
+        let down = document.getElementById("sizedown");
+        let fontSize = 20;
+
+        up.addEventListener("click", function () {
+            fontSize += 5;
+            p1.style.fontSize = fontSize + "px";
+        });
+        down.addEventListener("click", function () {
+            fontSize -= 5;
+            p1.style.fontSize = fontSize + "px";
+            });
+    </script>
+</body>
+
+</html>
