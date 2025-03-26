@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr1 = ["a","b","c","d","e"]
+        // 배열 , 객체에 대한 순회
+        // 일반 for문 
+        for(let i = 0; i < 5; i++){
+            console.log(arr1[i]);
+        }
+
+        // for ~  in 문
+        for(let key in arr1){
+            console.log(arr1[key]);
+        }
+
+        // for ~ of 문
+        for(const data of arr1){
+            console.log(data);
+        }
+
+        // foreach 문
+        arr1.forEach(function(val, index){
+            console.log(val);
+        })
+    </script>
+</body>
+</html>

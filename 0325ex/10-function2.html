@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수의 종류
+
+        // 1. 매개변수 X, 리턴 X
+        function func1(){
+            console.log("매개변수 X, 리턴 X")
+        }
+        func1();
+        
+        // 2. 매개변수 O, 리턴 X
+        function func2(val1, val2){
+            console.log("매개변수 O, 리턴 X");
+            console.log(val1, val2);
+        }
+        func2("값1", "값2");
+
+        // 3. 매개변수 X, 리턴 O
+        function func3(){
+            return "매개변수 X, 리턴 O";
+        }
+        var val3 = func3();
+        console.log(val3);
+
+        // 4. 매개변수 O, 리턴 O
+        function func4(val1, val2){
+            console.log("매개변수 O, 리턴 O");
+            return val1 + val2;
+        }
+        let val4 = func4("값1", "값2");
+        console.log(val4);
+    </script>
+</body>
+</html>
