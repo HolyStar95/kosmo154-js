@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./cat.jpg" width="200" height="200" alt="">
+    <svg width="200" height="200">
+        <defs>
+            <filter id="imageBlur1">
+                <feGaussianBlur stdDeviation="5" >
+                    <animate attributeName="stdDeviation" from="5" to="0.2" dur="5s"
+                    fill="freeze" repeatCount="indefinite"/>
+                </feGaussianBlur>
+            </filter>
+        </defs>
+        <image href="./cat.jpg" x="0" y="0" width="200" height="200"
+            filter="url(#imageBlur1)" />
+    </svg>
+</body>
+</html>
+ 

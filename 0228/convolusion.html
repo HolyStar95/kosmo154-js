@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./pixcel1.png" width="200" height="200">
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="sharpen">
+            <feConvolveMatrix in="SourceGraphic" order="3" kernelMatrix="
+              0 -1  0
+             -1  5 -1
+              0 -1  0" divisor="1" bias="0" />
+        </filter></defs>
+        <image href="./pixcel1.png" width="200" height="200" filter="url(#sharpen)" />
+    </svg>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="blur">
+            <feConvolveMatrix in="SourceGraphic" order="3" kernelMatrix="
+              1  1  1
+              1  1  1
+              1  1  1" divisor="9" bias="0"/>
+        </filter></defs>
+        <image href="./pixcel1.png" width="200" height="200" filter="url(#blur)" />
+    </svg>
+</body>
+</html>

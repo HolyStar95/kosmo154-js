@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container>* {
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template:
+                'header header header' 100px
+                'welcome welcome welcome' 600px
+                'banner main aside' 1fr
+                'footer footer footer' 100px / 250px 1fr 250px;
+        }
+
+        header {
+            grid-area: header;
+            background-color: darkkhaki;
+        }
+
+        .welcome {
+            grid-area: welcome;
+            background: url(./welcome-image.jpg) no-repeat center / cover;
+        }
+
+        .banner {
+            grid-area: banner;
+        }
+
+        main {
+            display: flex;
+            grid-area: main;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: darkkhaki;
+        }
+
+        @media(max-width :768px) {
+            .container {
+                grid-template:
+                    'header' 100px
+                    'welcome' 600px
+                    'banner' 100px
+                    'main' 1fr
+                    'aside' 100px
+                    'footer' 100px/1fr
+                ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>header</header>
+        <div class="welcome"></div>
+        <aside class="banner">banner</aside>
+        <main>
+            <h2>This is Main Content</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, possimus fugit vitae omnis officia
+                iste nam facilis ex libero minima nobis ad provident corporis suscipit dolores esse cumque rerum
+                incidunt!
+                Necessitatibus voluptatem quidem soluta sunt voluptas velit minus eum dolor ut quisquam placeat,
+                delectus, ex impedit perspiciatis totam, aspernatur id provident optio beatae ullam deserunt sit nihil.
+                Quidem, odio error.
+                Possimus quos sint blanditiis quidem voluptatem hic sunt numquam veniam magnam distinctio eveniet earum
+                reprehenderit accusantium nam cupiditate molestiae error odio rerum a, quisquam ratione natus voluptates
+                quia? Reiciendis, sint.
+                Consectetur natus, sequi, harum nostrum esse ex accusamus suscipit doloribus consequuntur nisi quas
+                incidunt eveniet minima ad eos veritatis vel dolor, maiores iusto enim. Dolorem quod vel ab sapiente
+                molestias?
+                Reprehenderit facilis expedita impedit tempora deleniti labore repellendus voluptate omnis, quis
+                pariatur, repellat accusantium praesentium qui facere inventore totam molestias! Ullam, nesciunt velit
+                harum aspernatur similique iste cum ea expedita.</p>
+        </main>
+        <aside class="aside">aside</aside>
+        <footer>footer</footer>
+    </div>
+</body>
+
+</html>

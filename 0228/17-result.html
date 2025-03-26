@@ -1,0 +1,32 @@
+<svg width="300" height="220" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="interactiveFilter">
+            <!-- 원본 그래픽에 블러 효과 적용 -->
+            <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blurEffect">
+                <!-- stdDeviation 값을 애니메이션 -->
+                <animate attributeName="stdDeviation" from="0" to="10" dur="2s" begin="startButton.click"
+                    end="stopButton.click" fill="freeze" />
+            </feGaussianBlur>
+            <!-- 블러 효과를 적용한 결과를 색상 변화 -->
+            <feColorMatrix in="blurEffect" type="hueRotate" values="0" result="colorEffect">
+                <!-- 색상 회전 값을 애니메이션 -->
+                <animate attributeName="values" from="0" to="360" dur="5s" begin="startButton.click"
+                    end="stopButton.click" fill="freeze" />
+            </feColorMatrix>
+            <!-- 변형된 그래픽을 출력 -->
+            <feComposite in="colorEffect" in2="SourceGraphic" operator="over" />
+        </filter>
+    </defs>
+
+    <!-- 애니메이션 시작 버튼 -->
+    <rect id="startButton" x="50" y="170" width="80" height="30" fill="#4CAF50" cursor="pointer" />
+    <text x="75" y="190" font-size="16" fill="white" text-anchor="middle" pointer-events="none">시작</text>
+
+    <!-- 애니메이션 종료 버튼 -->
+    <rect id="stopButton" x="170" y="170" width="80" height="30" fill="#F44336" cursor="pointer" />
+    <text x="195" y="190" font-size="16" fill="white" text-anchor="middle" pointer-events="none">정지</text>
+
+    <!-- 필터가 적용된 이미지 -->
+    <image href="./cat.jpg" width="300" height="150"
+        filter="url(#interactiveFilter)" />
+</svg>

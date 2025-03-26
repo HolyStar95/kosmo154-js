@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --defalut-margin: 20px
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .box {
+            /* 전체 너비에서 40px을 뺀 값 */
+            /* width: calc(100% - 40px);  */
+            width: calc(100% - 2 * var(--defalut-margin));
+            height: 200px;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+            color: white;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+css clac 예제
+    </div>
+</body>
+</html>
